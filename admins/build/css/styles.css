@@ -1,0 +1,40 @@
+.dashboard_graph .table .action {
+    float: right;
+    text-align: center;
+}
+
+.dashboard_graph .table .view {
+    margin: 0 5px 0 5px;
+    font-size: 19px;
+    background: #fff;
+    color: #03A9F4;
+}
+
+.dashboard_graph .table .des {
+    width: 40%;
+}
+
+.dashboard_graph .table .edit {
+    margin: 0 5px 0 5px;
+    font-size: 19px;
+    background: transparent;
+    color: #FFC107;
+}
+
+.dashboard_graph .table .delete {
+    margin: 0 5px 0 5px;
+    font-size: 19px;
+    background: transparent;
+    color: #E34724;
+}
+
+.dashboard_graph .table .img_with {
+    width: 50px;
+}
+
+.right_col h3 {
+    text-align: center;
+    font-size: 50px;
+    padding-top: 20%;
+    ;
+}
