@@ -13,61 +13,24 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- custom css file link -->
-    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
     <!-- header section starts -->
 
-    <header>
-
-        <div class="fas fa-bars" id="menu-bar"></div>
-
-        <a href="#" class="logo"><span>L</span>ogo</a>
-
-        <nav class="navbar">
-            <a class="active" href="#home">home</a>
-            <a href="#book">menu</a>
-            <a href="#packages">Reservation</a>
-            <a href="#services">Pages</a>
-            <a href="#gallery">Blog</a>
-            <a href="#review">Shop</a>
-            <a href="#contact">Element</a>
-        </nav>
-
-        <div class="icons">
-            <i class="fa fa-search" id="search-btn"></i>
-            <i class="fa fa-user" id="login-btn"></i>
-        </div>
-
-        <form action="" class="search-bar-container">
-            <input type="search" id="search-bar" placeholder="search here...">
-            <label for="search-bar" class="fa fa-search"></label>
-        </form>
-
-    </header>
+    <?php
+        require "element/header.php";
+    ?>
 
     <!-- header section end -->
 
     <!-- login form container -->
 
-    <div class="login-form-container">
-
-        <i class="fas fa-times" id="form-close"></i>
-
-        <form action="">
-            <h3>login</h3>
-            <input type="email" class="box" placeholder="enter your email...">
-            <input type="password" class="box" placeholder="enter your password...">
-            <input type="submit" class="btn" value="login now">
-            <input type="checkbox" id="remember">
-            <label for="remember">remember me</label>
-            <p>forget password? <a href="#">click here</a></p>
-            <p>dont have an account? <a href="#">register now</a></p>
-        </form>
-
-    </div>
+    <?php
+        require "element/login.php";
+    ?>
 
     <!-- home section starts -->
 
@@ -135,7 +98,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js "></script>
 
     <!-- custom js file link -->
-    <script src="js/script.js "></script>
+    <script src="js/scripts.js "></script>
 </body>
 
 </html>

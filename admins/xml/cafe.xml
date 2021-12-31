@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- <?xml-stylesheet type = "text/xsl" href = "cafe.xsl" ?> -->
-<cafe_shop>
-<packages id="1"><image>01-1.jpg</image><numeric>01</numeric><name>Truyện Hot</name><description>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</description><button>read more</button></packages><packages id="2"><image>01-1.jpg</image><numeric>02</numeric><name>Truyện Tranh</name><description>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</description><button>read more</button></packages></cafe_shop>
+<cafe_shop><logo id="1"><text>Thanh</text><image/></logo><header id="1"><name>home</name></header><header id="2"><name>Menu</name></header><header id="3"><name>Page</name></header><video_bg id="1"><video>Coffee Jet - 1631.mp4</video></video_bg></cafe_shop>

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Gentelella Alela! | </title>
+    <title>Admins</title>
 
     <!-- Bootstrap -->
     <link href="../admins/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -61,8 +61,9 @@
                             <ul class="nav side-menu">
                                 <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="home">Header</a></li>
-                                        <li><a href="backgroundVD">Video Background Home</a></li>
+                                        <li><a href="logo">Logo</a></li>
+                                        <li><a href="header">Header</a></li>
+                                        <li><a href="videobg">Video Background</a></li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Section<span class="fa fa-chevron-down"></span></a>
