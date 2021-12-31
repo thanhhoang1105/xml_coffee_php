@@ -1,3 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- <?xml-stylesheet type = "text/xsl" href = "cafe.xsl" ?> -->
-<cafe_shop><logo id="1"><text>Thanh</text><image/></logo><header id="1"><name>home</name></header><header id="2"><name>Menu</name></header><header id="3"><name>Page</name></header><video_bg id="1"><video>Coffee Jet - 1631.mp4</video></video_bg></cafe_shop>
+<cafe_shop>
+    <logo id="1">
+        <text_one>L</text_one>
+        <text_two>ogo</text_two>
+        <image/>
+    </logo>
+    <header id="1">
+        <name>home</name>
+    </header>
+    <header id="2">
+        <name>Menu</name>
+    </header>
+    <header id="3">
+        <name>Page</name>
+    </header>
+    
+    <header id="4">
+        <name>blog</name>
+    </header>
+    <header id="5">
+        <name>shop</name>
+    </header>
+    <header id="6">
+        <name>element</name>
+    </header>
+    
+    
+    
+    <text_bg id="1">
+        <image>logo-banner.png</image>
+        <title>SPECIAL COFFEE BEANS</title>
+        <text>Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.</text>
+        <button>read more</button>
+    </text_bg>
+    <video_bg id="1">
+        <video>Coffee - 80134.mp4</video>
+        <class_active>active</class_active>
+    </video_bg>
+    <video_bg id="2">
+        <video>Coffee Jet - 1631.mp4</video>
+        <class_active/>
+    </video_bg>
+    <video_bg id="3">
+        <video>Sequence-01_1.mp4</video>
+        <class_active/>
+    </video_bg>
+    
+    <service id="1">
+        <image>02-1.png</image>
+        <name>COFFEEMAKER</name>
+        <description>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Inventore Commodi Earum, Quis Voluptate Exercitationem Ut Minima Itaque Ipsum Corrupti!</description>
+    </service>
+    <service id="2">
+        <image>02-2.png</image>
+        <name>COFFEE GRINDER</name>
+        <description>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Inventore Commodi Earum, Quis Voluptate Exercitationem Ut Minima Itaque Ipsum Corrupti!</description>
+    </service>
+    <service id="3">
+        <image>02-3.png</image>
+        <name>COFFEE CUPS</name>
+        <description>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Inventore Commodi Earum, Quis Voluptate Exercitationem Ut Minima Itaque Ipsum Corrupti!</description>
+    </service>
+    <service id="4">
+        <image>02-4.png</image>
+        <name>ESPRESSO MACHINE</name>
+        <description>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Inventore Commodi Earum, Quis Voluptate Exercitationem Ut Minima Itaque Ipsum Corrupti!</description>
+    </service>
+<packages id="2"><image>01-2.jpg</image><numeric>02</numeric><name>FEEL THE COFFEE</name><description>Alienum phaedrum to rquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an pericula euripidis, hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix atle.</description><button>read more</button></packages><packages id="3"><image>01-3.jpg</image><numeric>03</numeric><name>FULL TASTE</name><description>Alienum phaedrum to rquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an pericula euripidis, hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix atle.</description><button>read more</button></packages><wrapper id="1"><image_left>03-1.jpg</image_left><image_right>03-2.jpg</image_right><title>try the best coffee in the city</title><text>lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur</text><button>read more</button></wrapper></cafe_shop>

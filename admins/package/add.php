@@ -50,7 +50,8 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Logo</span></a>
+                        <a href="../index.php" class="site_title"> <i class="fas fa-mug-hot"></i>
+                            <span>Coffee</span></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -58,7 +59,7 @@
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
-                            <img src="images/ngocngu.jpg" alt="..." class="img-circle profile_img">
+                            <img src="../images/ngocngu.jpg" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                             <span>Chào Mừng</span>
@@ -116,21 +117,13 @@
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                     id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="images/ngocngu.jpg" alt="">Ngọc Ngu
+                                    <img src="../images/ngocngu.jpg" alt="">Ngọc Ngu
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i>
                                         Log Out</a>
                                 </div>
-                            </li>
-
-                            <li role="presentation" class="nav-item dropdown open">
-                                <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1"
-                                    data-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span class="badge bg-green">6</span>
-                                </a>
                             </li>
                         </ul>
                     </nav>
@@ -147,7 +140,7 @@
                         <div class="row x_title">
                             <div class="col-md-6">
                                 <h2>
-                                    <a>Add Header</a>
+                                    <a>Add Package</a>
                                 </h2>
                             </div>
                         </div>

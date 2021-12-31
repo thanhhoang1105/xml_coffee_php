@@ -45,7 +45,7 @@
     <link href="../build/css/custom.min.css" rel="stylesheet">
 
     <!-- Style css -->
-    <link href="../build/css/styles.css" rel="stylesheet">
+    <link href="../build/css/styles2.css" rel="stylesheet">
 
 </head>
 
@@ -85,6 +85,7 @@
                                         <li><a href="../logo/index.php">Logo</a></li>
                                         <li><a href="../header/index.php">Header</a></li>
                                         <li><a href="../videobg/index.php">Video Background Home</a></li>
+                                        <li><a href="../text_bg/index.php">Text In Background</a></li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Section<span class="fa fa-chevron-down"></span></a>

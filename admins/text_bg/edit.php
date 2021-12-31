@@ -1,22 +1,29 @@
 <?php 
-    if(isset($_GET['action'])){
-        $cafe_shop = simplexml_load_file('../xml/cafe.xml');
-        $id = $_GET['id'];
-        $index =  0;
-        $i = 0 ;
-        foreach ($cafe_shop->logo as $logo){
-            if($logo['id']==$id){
-                $index = $i;
+     $cafe_shop = simplexml_load_file('../xml/cafe.xml');
+    if(isset($_POST['submitSave'])){
+        foreach ($cafe_shop->text_bg as $text_bg){
+            if($text_bg['id']==$_POST['id']){
+                $text_bg->image = $_POST['image'];
+                $text_bg->title = $_POST['title'];
+                $text_bg->text = $_POST['text'];
+                $text_bg->button = $_POST['button'];
                 break;
             }
-            $i++;
         }
-        unset ($cafe_shop->logo[$index]);
         file_put_contents('../xml/cafe.xml',$cafe_shop->asXML());
+        header('Location: index.php');
+        exit();
     }
-    $cafe_shop = simplexml_load_file('../xml/cafe.xml');
-    $xml_url = 'http://localhost:8888/xml/Coffee/images/';
-        
+    foreach ($cafe_shop->text_bg as $text_bg){
+        if($text_bg['id']==$_GET['id']){
+           $id = $text_bg['id'];
+           $image = $text_bg->image;
+           $title = $text_bg->title;
+           $text = $text_bg->text;
+           $button = $text_bg->button;
+           break;
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +37,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Logo</title>
+    <title>Text In Background</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -45,7 +52,7 @@
     <link href="../build/css/custom.min.css" rel="stylesheet">
 
     <!-- Style css -->
-    <link href="../build/css/styles2.css" rel="stylesheet">
+    <link href="../build/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -55,8 +62,9 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="../index.php" class="site_title"> <i class="fas fa-mug-hot"></i>
-                            <span>Coffee</span></a>
+                        <a href="index.php" class="site_title"> <i class="fas fa-mug-hot"></i>
+                            <span>Coffee</span>
+                        </a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -67,7 +75,7 @@
                             <img src="../images/ngocngu.jpg" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
-                            <span>Welcome</span>
+                            <span>Chào Mừng</span>
                             <h2>Ngọc Ngu</h2>
                         </div>
                     </div>
@@ -85,13 +93,13 @@
                                         <li><a href="../logo/index.php">Logo</a></li>
                                         <li><a href="../header/index.php">Header</a></li>
                                         <li><a href="../videobg/index.php">Video Background Home</a></li>
-                                        <li><a href="../text_bg/index.php">Text In Background </a></li>
+                                        <li><a href="../text_bg/index.php">Text In Background</a></li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Section<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="package">Package</a></li>
-                                        <li><a href="service">Service</a></li>
+                                        <li><a href="form.html">Package</a></li>
+                                        <li><a href="form_advanced.html">Services</a></li>
                                         <li><a href="form_validation.html">Form Validation</a></li>
                                         <li><a href="form_wizards.html">Form Wizard</a></li>
                                         <li><a href="form_upload.html">Form Upload</a></li>
@@ -147,38 +155,71 @@
                         <div class="row x_title">
                             <div class="col-md-6">
                                 <h2>
-                                    <a href="add.php">Add Logo <i class="fas fa-plus"></i></a>
+                                    <a>Edit Header</a>
                                 </h2>
                             </div>
                         </div>
-                        <div class="dashboard_graph">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>first name</th>
-                                        <th>second name</th>
-                                        <th>Image Logo</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($cafe_shop->logo as $logo) { ?>
-                                    <tr>
-                                        <td><?php echo $logo['id'] ; ?></td>
-                                        <td><?php echo $logo->text_one ; ?></td>
-                                        <td><?php echo $logo->text_two ; ?></td>
-                                        <td><?php echo '<img src="'.$xml_url . '' . $logo -> image . '" class="img_with">' ?>
-                                        </td>
-                                        <td>
-                                            <a class="edit" href="edit.php?id=<?php echo $logo['id'];?>"><i
-                                                    class="fas fa-pen"></i></a>
-                                        </td>
-                                    </tr>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 ">
+                                <div class="x_panel">
+                                    <div class="x_content">
+                                        <br />
+                                        <form method="POST" id="demo-form2" data-parsley-validate
+                                            class="form-horizontal form-label-left">
 
-                                    <?php } ?>
-                                </tbody>
-                            </table>
+                                            <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align">ID
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input type="text" name="id" value="<?php echo $id?>"
+                                                        class="form-control" readonly="none">
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label
+                                                    class="col-form-label col-md-3 col-sm-3 label-align">Image</label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input type="text" value="<?php echo $image?>" class="form-control">
+                                                    <input type="file" name="image">
+                                                </div>
+                                            </div>
+
+                                            <div class="item form-group">
+                                                <label
+                                                    class="col-form-label col-md-3 col-sm-3 label-align">Title</label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input class="form-control" type="text" name="title"
+                                                        value="<?php echo $title?>">
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align">Text</label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input class="form-control" type="text" name="text"
+                                                        value="<?php echo $text?>">
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label
+                                                    class="col-form-label col-md-3 col-sm-3 label-align">button</label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input class="form-control" type="text" name="button"
+                                                        value="<?php echo $button?>">
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <div class="col-md-6 col-sm-6 offset-md-3">
+                                                    <button type="submit" name="submitSave" value="Save"
+                                                        class="btn btn-success">Submit</button>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix">
                         </div>
                     </div>
                 </div>

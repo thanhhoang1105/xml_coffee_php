@@ -24,7 +24,7 @@
     <link href="../admins/build/css/custom.min.css" rel="stylesheet">
 
     <!-- Style css -->
-    <link href="build/css/styles.css" rel="stylesheet">
+    <link href="build/css/styles2.css" rel="stylesheet">
 
 </head>
 
@@ -64,13 +64,14 @@
                                         <li><a href="logo">Logo</a></li>
                                         <li><a href="header">Header</a></li>
                                         <li><a href="videobg">Video Background</a></li>
+                                        <li><a href="text_bg">Text In Background</a></li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Section<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li><a href="package">Package</a></li>
                                         <li><a href="service">Service</a></li>
-                                        <li><a href="form_validation.html">Form Validation</a></li>
+                                        <li><a href="wrapper">Wrapper</a></li>
                                         <li><a href="form_wizards.html">Form Wizard</a></li>
                                         <li><a href="form_upload.html">Form Upload</a></li>
                                         <li><a href="form_buttons.html">Form Buttons</a></li>

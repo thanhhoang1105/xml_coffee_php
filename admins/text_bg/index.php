@@ -4,14 +4,14 @@
         $id = $_GET['id'];
         $index =  0;
         $i = 0 ;
-        foreach ($cafe_shop->logo as $logo){
-            if($logo['id']==$id){
+        foreach ($cafe_shop->text_bg as $text_bg){
+            if($text_bg['id']==$id){
                 $index = $i;
                 break;
             }
             $i++;
         }
-        unset ($cafe_shop->logo[$index]);
+        unset ($cafe_shop->text_bg[$index]);
         file_put_contents('../xml/cafe.xml',$cafe_shop->asXML());
     }
     $cafe_shop = simplexml_load_file('../xml/cafe.xml');
@@ -30,7 +30,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Logo</title>
+    <title>Header</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -85,7 +85,7 @@
                                         <li><a href="../logo/index.php">Logo</a></li>
                                         <li><a href="../header/index.php">Header</a></li>
                                         <li><a href="../videobg/index.php">Video Background Home</a></li>
-                                        <li><a href="../text_bg/index.php">Text In Background </a></li>
+                                        <li><a href="../text_bg/index.php">Text In Background</a></li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Section<span class="fa fa-chevron-down"></span></a>
@@ -147,7 +147,7 @@
                         <div class="row x_title">
                             <div class="col-md-6">
                                 <h2>
-                                    <a href="add.php">Add Logo <i class="fas fa-plus"></i></a>
+                                    <a href="add.php">Add Text Background <i class="fas fa-plus"></i></a>
                                 </h2>
                             </div>
                         </div>
@@ -156,23 +156,29 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>first name</th>
-                                        <th>second name</th>
-                                        <th>Image Logo</th>
+                                        <th>Image</th>
+                                        <th>Title</th>
+                                        <th class="text_Bg">Text</th>
+                                        <th>Button</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($cafe_shop->logo as $logo) { ?>
+                                    <?php foreach ($cafe_shop->text_bg as $text_bg) { ?>
                                     <tr>
-                                        <td><?php echo $logo['id'] ; ?></td>
-                                        <td><?php echo $logo->text_one ; ?></td>
-                                        <td><?php echo $logo->text_two ; ?></td>
-                                        <td><?php echo '<img src="'.$xml_url . '' . $logo -> image . '" class="img_with">' ?>
+                                        <td><?php echo $text_bg['id'] ; ?></td>
+                                        <td><?php echo '<img src="'.$xml_url . '' . $text_bg -> image . '" class="img_with">' ?>
                                         </td>
+                                        <td><?php echo $text_bg->title ; ?></td>
+                                        <td><?php echo $text_bg->text ; ?></td>
+                                        <td><?php echo $text_bg->button ; ?></td>
                                         <td>
-                                            <a class="edit" href="edit.php?id=<?php echo $logo['id'];?>"><i
+                                            <a class="edit" href="edit.php?id=<?php echo $text_bg['id'];?>"><i
                                                     class="fas fa-pen"></i></a>
+                                            <a class="delete"
+                                                href="index.php?action=delete&id=<?php echo $text_bg['id'];?>"
+                                                onclick="return confirm ('Are you sure?')"><i
+                                                    class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
 

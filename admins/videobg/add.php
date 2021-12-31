@@ -4,6 +4,7 @@
         $video_bg =  $shop->addChild('video_bg');
         $video_bg->addAttribute('id', $_POST['id']);
         $video_bg->addChild('video', $_POST['video']);
+        $video_bg->addChild('class_active', $_POST['class_active']);
         file_put_contents('../xml/cafe.xml',$shop->asXML());
         header('Location: index.php');
         exit();
@@ -77,6 +78,7 @@
                                         <li><a href="../Logo/index.php">Logo</a></li>
                                         <li><a href="../header/index.php">Header</a></li>
                                         <li><a href="../videobg/index.php">Video Background Home</a></li>
+                                        <li><a href="../text_bg/index.php">Text In Background</a></li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Section<span class="fa fa-chevron-down"></span></a>
@@ -165,6 +167,15 @@
                                                     <input type="file" name="video">
                                                 </div>
                                             </div>
+
+                                            <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align">Class Active
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input type="text" name="class_active" class="form-control">
+                                                </div>
+                                            </div>
+
                                             <div class="item form-group">
                                                 <div class="col-md-6 col-sm-6 offset-md-3">
                                                     <button type="submit" name="submitSave" value="Save"

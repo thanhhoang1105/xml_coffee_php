@@ -64,7 +64,8 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Logo</span></a>
+                        <a href="../index.php" class="site_title"> <i class="fas fa-mug-hot"></i>
+                            <span>Coffee</span></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -161,7 +162,7 @@
                         <div class="row x_title">
                             <div class="col-md-6">
                                 <h2>
-                                    <a>Edit Header</a>
+                                    <a>Edit Package</a>
                                 </h2>
                             </div>
                         </div>
@@ -186,6 +187,8 @@
                                                 <label class="col-form-label col-md-3 col-sm-3 label-align">Hình Ảnh
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 ">
+                                                    <input type="text" value="<?php echo $image?>" class="form-control"
+                                                        readonly="none">
                                                     <input type="file" name="image" value="<?php echo $image?>">
                                                 </div>
                                             </div>
@@ -220,7 +223,6 @@
                                                         value="<?php echo $button?>">
                                                 </div>
                                             </div>
-                                            <div class="ln_solid"></div>
                                             <div class="item form-group">
                                                 <div class="col-md-6 col-sm-6 offset-md-3">
                                                     <button type="submit" name="submitSave" value="Save"

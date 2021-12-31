@@ -1,12 +1,30 @@
 <?php 
+     $cafe_shop = simplexml_load_file('../xml/cafe.xml');
     if(isset($_POST['submitSave'])){
-        $shop = simplexml_load_file('../xml/cafe.xml');
-        $header =  $shop->addChild('header');
-        $header->addAttribute('id', $_POST['id']);
-        $header->addChild('name', $_POST['name']);
-        file_put_contents('../xml/cafe.xml',$shop->asXML());
+        foreach ($cafe_shop->wrapper as $wrapper){
+            if($wrapper['id']==$_POST['id']){
+                $wrapper->image_left = $_POST['image_left'];
+                $wrapper->image_right = $_POST['image_right'];
+                $wrapper->title = $_POST['title'];
+                $wrapper->text = $_POST['text'];
+                $wrapper->button = $_POST['button'];
+                break;
+            }
+        }
+        file_put_contents('../xml/cafe.xml',$cafe_shop->asXML());
         header('Location: index.php');
         exit();
+    }
+    foreach ($cafe_shop->wrapper as $wrapper){
+        if($wrapper['id']==$_GET['id']){
+           $id = $wrapper['id'];
+           $image_left = $wrapper->image_left;
+           $image_right = $wrapper->image_right;
+           $title = $wrapper->title;
+           $text = $wrapper->text;
+           $button = $wrapper->button;
+           break;
+        }
     }
 ?>
 
@@ -21,7 +39,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Header</title>
+    <title>Service</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -46,9 +64,8 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.php" class="site_title"> <i class="fas fa-mug-hot"></i>
-                            <span>Coffee</span>
-                        </a>
+                        <a href="../index.php" class="site_title"> <i class="fas fa-mug-hot"></i>
+                            <span>Coffee</span></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -56,7 +73,7 @@
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
-                            <img src="../images/ngocngu.jpg" alt="..." class="img-circle profile_img">
+                            <img src=".//images/ngocngu.jpg" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                             <span>Chào Mừng</span>
@@ -74,10 +91,8 @@
                             <ul class="nav side-menu">
                                 <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="../Logo/index.php">Logo</a></li>
-                                        <li><a href="../header/index.php">Header</a></li>
-                                        <li><a href="../videobg/index.php">Video Background Home</a></li>
-                                        <li><a href="../text_bg/index.php">Text In Background</a></li>
+                                        <li><a href="../home/index.php">Header</a></li>
+                                        <li><a href="">Video Background Home</a></li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Section<span class="fa fa-chevron-down"></span></a>
@@ -139,7 +154,7 @@
                         <div class="row x_title">
                             <div class="col-md-6">
                                 <h2>
-                                    <a>Add Header</a>
+                                    <a>Edit Wrapper</a>
                                 </h2>
                             </div>
                         </div>
@@ -155,16 +170,57 @@
                                                 <label class="col-form-label col-md-3 col-sm-3 label-align">ID
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 ">
-                                                    <input type="text" name="id" class="form-control">
+                                                    <input type="text" name="id" value="<?php echo $id?>"
+                                                        class="form-control" readonly="none">
                                                 </div>
                                             </div>
 
                                             <div class="item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3 label-align">Tên</label>
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align">Image Left
+                                                </label>
                                                 <div class="col-md-6 col-sm-6 ">
-                                                    <input class="form-control" type="text" name="name">
+                                                    <input type="text" value="<?php echo $image_left?>"
+                                                        class="form-control" readonly="none">
+                                                    <input type="file" name="image_left">
                                                 </div>
                                             </div>
+
+                                            <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align">Image Right
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input type="text" value="<?php echo $image_right?>"
+                                                        class="form-control" readonly="none">
+                                                    <input type="file" name="image_right">
+                                                </div>
+                                            </div>
+
+                                            <div class="item form-group">
+                                                <label
+                                                    class="col-form-label col-md-3 col-sm-3 label-align">Title</label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input class="form-control" type="text" name="title"
+                                                        value="<?php echo $title?>">
+                                                </div>
+                                            </div>
+
+                                            <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align">Text</label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input class="form-control" type="text" name="text"
+                                                        value="<?php echo $text?>">
+                                                </div>
+                                            </div>
+
+                                            <div class="item form-group">
+                                                <label
+                                                    class="col-form-label col-md-3 col-sm-3 label-align">Button</label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input class="form-control" type="text" name="button"
+                                                        value="<?php echo $button?>">
+                                                </div>
+                                            </div>
+
                                             <div class="item form-group">
                                                 <div class="col-md-6 col-sm-6 offset-md-3">
                                                     <button type="submit" name="submitSave" value="Save"

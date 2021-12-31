@@ -4,14 +4,14 @@
         $id = $_GET['id'];
         $index =  0;
         $i = 0 ;
-        foreach ($cafe_shop->logo as $logo){
-            if($logo['id']==$id){
+        foreach ($cafe_shop->wrapper as $wrapper){
+            if($wrapper['id']==$id){
                 $index = $i;
                 break;
             }
             $i++;
         }
-        unset ($cafe_shop->logo[$index]);
+        unset ($cafe_shop->wrapper[$index]);
         file_put_contents('../xml/cafe.xml',$cafe_shop->asXML());
     }
     $cafe_shop = simplexml_load_file('../xml/cafe.xml');
@@ -30,7 +30,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Logo</title>
+    <title>Wrapper</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -82,17 +82,15 @@
                             <ul class="nav side-menu">
                                 <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="../logo/index.php">Logo</a></li>
-                                        <li><a href="../header/index.php">Header</a></li>
+                                        <li><a href="../home/index.php">Header</a></li>
                                         <li><a href="../videobg/index.php">Video Background Home</a></li>
-                                        <li><a href="../text_bg/index.php">Text In Background </a></li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Section<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="package">Package</a></li>
-                                        <li><a href="service">Service</a></li>
-                                        <li><a href="form_validation.html">Form Validation</a></li>
+                                        <li><a href="../package/index.php">Package</a></li>
+                                        <li><a href="../service/index.php">Service</a></li>
+                                        <li><a href="../wrapper/index.php">Form Validation</a></li>
                                         <li><a href="form_wizards.html">Form Wizard</a></li>
                                         <li><a href="form_upload.html">Form Upload</a></li>
                                         <li><a href="form_buttons.html">Form Buttons</a></li>
@@ -147,7 +145,7 @@
                         <div class="row x_title">
                             <div class="col-md-6">
                                 <h2>
-                                    <a href="add.php">Add Logo <i class="fas fa-plus"></i></a>
+                                    <a href="add.php">Add Wrapper <i class="fas fa-plus"></i></a>
                                 </h2>
                             </div>
                         </div>
@@ -156,23 +154,31 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>first name</th>
-                                        <th>second name</th>
-                                        <th>Image Logo</th>
+                                        <th>Image left</th>
+                                        <th>Image Right</th>
+                                        <th>title</th>
+                                        <th>text</th>
+                                        <th>button</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($cafe_shop->logo as $logo) { ?>
+                                    <?php foreach ($cafe_shop->wrapper as $wrapper) { ?>
                                     <tr>
-                                        <td><?php echo $logo['id'] ; ?></td>
-                                        <td><?php echo $logo->text_one ; ?></td>
-                                        <td><?php echo $logo->text_two ; ?></td>
-                                        <td><?php echo '<img src="'.$xml_url . '' . $logo -> image . '" class="img_with">' ?>
+                                        <td><?php echo $wrapper['id'] ; ?></td>
+                                        <td><?php echo '<img src="'.$xml_url . '' . $wrapper -> image_left . '" class="img_with">' ?>
+                                        <td><?php echo '<img src="'.$xml_url . '' . $wrapper -> image_right . '" class="img_with">' ?>
                                         </td>
+                                        <td><?php echo $wrapper->title ; ?></td>
+                                        <td><?php echo $wrapper->text ; ?></td>
+                                        <td><?php echo $wrapper->button ; ?></td>
                                         <td>
-                                            <a class="edit" href="edit.php?id=<?php echo $logo['id'];?>"><i
+                                            <a class="edit" href="edit.php?id=<?php echo $wrapper['id'];?>"><i
                                                     class="fas fa-pen"></i></a>
+                                            <a class="delete"
+                                                href="index.php?action=delete&id=<?php echo $wrapper['id'];?>"
+                                                onclick="return confirm ('Are you sure?')"><i
+                                                    class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
 

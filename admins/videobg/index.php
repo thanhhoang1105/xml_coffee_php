@@ -45,7 +45,7 @@
     <link href="../build/css/custom.min.css" rel="stylesheet">
 
     <!-- Style css -->
-    <link href="../build/css/styles.css" rel="stylesheet">
+    <link href="../build/css/styles2.css" rel="stylesheet">
 
 </head>
 
@@ -85,6 +85,7 @@
                                         <li><a href="../logo/index.php">Logo</a></li>
                                         <li><a href="../header/index.php">Header</a></li>
                                         <li><a href="../videobg/index.php">Video Background</a></li>
+                                        <li><a href="../text_bg/index.php">Text In Background</a></li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Section<span class="fa fa-chevron-down"></span></a>
@@ -156,6 +157,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Video</th>
+                                        <th>Class Active</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -164,6 +166,7 @@
                                     <tr>
                                         <td><?php echo $video_bg['id'] ; ?></td>
                                         <td><?php echo $video_bg->video ; ?></td>
+                                        <td><?php echo $video_bg->class_active ; ?></td>
                                         <td>
                                             <a class="edit" href="edit.php?id=<?php echo $video_bg['id'];?>"><i
                                                     class="fas fa-pen"></i></a>

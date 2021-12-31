@@ -1,16 +1,28 @@
 <section class="home" id="home">
 
     <div class="content">
-        <img src="images/logo-banner.png">
-        <h3>Special coffee beans</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        <a href="#" class="btn">read more</a>
+        <?php
+            $xml_url = 'http://localhost:8888/xml/Coffee/images/';
+            $xml=simplexml_load_file("admins/xml/cafe.xml") or die("Error: Cannot create object");
+            foreach($xml->text_bg as $text_bg){
+                echo '
+                    <img src="'.$xml_url . '' . $text_bg -> image . '">
+                    <h3>'. $text_bg -> title .'</h3>
+                    <p>'. $text_bg -> text .'</p>
+                    <a href="#" class="btn">'. $text_bg -> button .'</a>
+                ';     
+            }
+        ?>
     </div>
 
     <div class="controls">
-        <span class="vid-btn active" data-src="video/Coffee Jet - 1631.mp4"></span>
-        <span class="vid-btn" data-src="video/Sequence-01_1.mp4"></span>
-        <span class="vid-btn" data-src="video/Coffee - 80134.mp4"></span>
+        <?php
+            foreach($xml->video_bg as $video_bg){
+                echo '
+                    <span class="vid-btn ' . $video_bg -> class_active .'" data-src="video/'. $video_bg -> video .'"></span>
+                ';     
+            }
+        ?>
     </div>
 
     <div class="video-container">

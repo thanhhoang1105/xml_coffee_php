@@ -1,17 +1,24 @@
 <header>
 
     <div class="fas fa-bars" id="menu-bar"></div>
-
-    <a href="#" class="logo"><span>L</span>ogo</a>
+    <?php
+        $xml_url = 'http://localhost:8888/xml/Coffee/images/';
+        $xml=simplexml_load_file("admins/xml/cafe.xml") or die("Error: Cannot create object");
+        foreach($xml->logo as $logo){
+            echo '
+                <a href="#" class="logo"><span>'. $logo -> text_one .'</span>'. $logo -> text_two .'</a>
+            ';     
+        }
+    ?>
 
     <nav class="navbar">
-        <a class="active" href="#home">home</a>
-        <a href="#book">menu</a>
-        <a href="#packages">Reservation</a>
-        <a href="#services">Pages</a>
-        <a href="#gallery">Blog</a>
-        <a href="#review">Shop</a>
-        <a href="#contact">Element</a>
+        <?php
+            foreach($xml->header as $header){
+                echo '
+                    <a href="#'. $header -> name .'">'. $header -> name .'</a>
+                ';     
+            }
+        ?>
     </nav>
 
     <div class="icons">

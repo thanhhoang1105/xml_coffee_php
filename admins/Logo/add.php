@@ -3,7 +3,8 @@
         $shop = simplexml_load_file('../xml/cafe.xml');
         $logo =  $shop->addChild('logo');
         $logo->addAttribute('id', $_POST['id']);
-        $logo->addChild('text', $_POST['text']);
+        $logo->addChild('text_one', $_POST['text_one']);
+        $logo->addChild('text_two', $_POST['text_two']);
         $logo->addChild('image', $_POST['image']);
         file_put_contents('../xml/cafe.xml',$shop->asXML());
         header('Location: index.php');
@@ -78,6 +79,7 @@
                                         <li><a href="../logo/index.php">Logo</a></li>
                                         <li><a href="../header/index.php">Header</a></li>
                                         <li><a href="../videobg/index.php">Video Background Home</a></li>
+                                        <li><a href="../text_bg/index.php">Text In Background</a></li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Section<span class="fa fa-chevron-down"></span></a>
@@ -160,10 +162,17 @@
                                             </div>
 
                                             <div class="item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3 label-align">Text Logo
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align">First Name
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 ">
-                                                    <input type="text" name="text" class="form-control">
+                                                    <input type="text" name="text_one" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align">Second Name
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input type="text" name="text_two" class="form-control">
                                                 </div>
                                             </div>
 

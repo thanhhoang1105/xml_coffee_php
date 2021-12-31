@@ -1,22 +1,15 @@
 <?php 
-    if(isset($_GET['action'])){
-        $cafe_shop = simplexml_load_file('../xml/cafe.xml');
-        $id = $_GET['id'];
-        $index =  0;
-        $i = 0 ;
-        foreach ($cafe_shop->logo as $logo){
-            if($logo['id']==$id){
-                $index = $i;
-                break;
-            }
-            $i++;
-        }
-        unset ($cafe_shop->logo[$index]);
-        file_put_contents('../xml/cafe.xml',$cafe_shop->asXML());
+    if(isset($_POST['submitSave'])){
+        $shop = simplexml_load_file('../xml/cafe.xml');
+        $service =  $shop->addChild('service');
+        $service->addAttribute('id', $_POST['id']);
+        $service->addChild('image', $_POST['image']);
+        $service->addChild('name', $_POST['name']);
+        $service->addChild('description', $_POST['description']);
+        file_put_contents('../xml/cafe.xml',$shop->asXML());
+        header('Location: index.php');
+        exit();
     }
-    $cafe_shop = simplexml_load_file('../xml/cafe.xml');
-    $xml_url = 'http://localhost:8888/xml/Coffee/images/';
-        
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Logo</title>
+    <title>Gentelella Alela! | </title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -45,7 +38,7 @@
     <link href="../build/css/custom.min.css" rel="stylesheet">
 
     <!-- Style css -->
-    <link href="../build/css/styles2.css" rel="stylesheet">
+    <link href="../build/css/style2.css" rel="stylesheet">
 
 </head>
 
@@ -67,7 +60,7 @@
                             <img src="../images/ngocngu.jpg" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
-                            <span>Welcome</span>
+                            <span>Chào Mừng</span>
                             <h2>Ngọc Ngu</h2>
                         </div>
                     </div>
@@ -82,16 +75,14 @@
                             <ul class="nav side-menu">
                                 <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="../logo/index.php">Logo</a></li>
-                                        <li><a href="../header/index.php">Header</a></li>
-                                        <li><a href="../videobg/index.php">Video Background Home</a></li>
-                                        <li><a href="../text_bg/index.php">Text In Background </a></li>
+                                        <li><a href="">Header</a></li>
+                                        <li><a href="">Video Background Home</a></li>
                                     </ul>
                                 </li>
                                 <li><a><i class="fa fa-edit"></i> Section<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="package">Package</a></li>
-                                        <li><a href="service">Service</a></li>
+                                        <li><a href="form.html">Package</a></li>
+                                        <li><a href="form_advanced.html">Services</a></li>
                                         <li><a href="form_validation.html">Form Validation</a></li>
                                         <li><a href="form_wizards.html">Form Wizard</a></li>
                                         <li><a href="form_upload.html">Form Upload</a></li>
@@ -147,38 +138,62 @@
                         <div class="row x_title">
                             <div class="col-md-6">
                                 <h2>
-                                    <a href="add.php">Add Logo <i class="fas fa-plus"></i></a>
+                                    <a>Add Service</a>
                                 </h2>
                             </div>
                         </div>
-                        <div class="dashboard_graph">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>first name</th>
-                                        <th>second name</th>
-                                        <th>Image Logo</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($cafe_shop->logo as $logo) { ?>
-                                    <tr>
-                                        <td><?php echo $logo['id'] ; ?></td>
-                                        <td><?php echo $logo->text_one ; ?></td>
-                                        <td><?php echo $logo->text_two ; ?></td>
-                                        <td><?php echo '<img src="'.$xml_url . '' . $logo -> image . '" class="img_with">' ?>
-                                        </td>
-                                        <td>
-                                            <a class="edit" href="edit.php?id=<?php echo $logo['id'];?>"><i
-                                                    class="fas fa-pen"></i></a>
-                                        </td>
-                                    </tr>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 ">
+                                <div class="x_panel">
+                                    <div class="x_content">
+                                        <br />
+                                        <form method="POST" id="demo-form2" data-parsley-validate
+                                            class="form-horizontal form-label-left">
 
-                                    <?php } ?>
-                                </tbody>
-                            </table>
+                                            <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align">ID
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input type="text" name="id" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align">Hình Ảnh
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input type="file" name="image">
+                                                </div>
+                                            </div>
+
+                                            <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align">Name</label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input class="form-control" type="text" name="name">
+                                                </div>
+                                            </div>
+
+                                            <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align">Mô
+                                                    Tả</label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                    <input class="form-control" type="text" name="description">
+                                                </div>
+                                            </div>
+
+                                            <div class="item form-group">
+                                                <div class="col-md-6 col-sm-6 offset-md-3">
+                                                    <button type="submit" name="submitSave" value="Save"
+                                                        class="btn btn-success">Submit</button>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix">
                         </div>
                     </div>
                 </div>
