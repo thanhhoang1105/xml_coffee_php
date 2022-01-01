@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="Windows-1252" standalone="yes"?>
+<users>
+    <login_details>
+        <login>thanh1105</login>
+        <password>123456</password>
+    </login_details>
+    <login_details id="2">
+        <login>ngoc2412</login>
+        <password>123456</password>
+    </login_details>
+    <login_details id="3">
+        <login>lam</login>
+        <password>123456</password>
+    </login_details>
+</users>

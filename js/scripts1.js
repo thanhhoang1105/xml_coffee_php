@@ -62,7 +62,7 @@ videoBtn.forEach(btn => {
     });
 });
 
-var swiper = new Swiper(".team-slider", {
+var swiper = new Swiper(".product-slider", {
     spaceBetween: 20,
     loop: true,
     autoplay: {

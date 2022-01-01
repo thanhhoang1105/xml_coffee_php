@@ -14,7 +14,7 @@
                 <div class="box-content">
                     <?php
                         $xml_url = 'http://localhost:8888/xml/Coffee/images/';
-                        $xml=simplexml_load_file("admins/xml/xml.xml") or die("Error: Cannot create object");
+                        $xml=simplexml_load_file("admins/xml/cafe.xml") or die("Error: Cannot create object");
                         foreach($xml->menu_left as $menu_left){
                             echo '
                                 <div class="box ">
@@ -29,7 +29,7 @@
                                                         <h3>'. $menu_left ->name . '</h3>
                                                     </div>
                                                     <div class="about-name ">
-                                                        <h3>'. $menu_left ->price . '</h3>
+                                                        <h3>$'. $menu_left ->price . '</h3>
                                                     </div>
                                                 </div>
                                                 <p>' . $menu_left ->description . '</p>
@@ -44,7 +44,7 @@
                 <div class="box-content">
                     <?php
                         $xml_url = 'http://localhost:8888/xml/Coffee/images/';
-                        $xml=simplexml_load_file("admins/xml/xml.xml") or die("Error: Cannot create object");
+                        $xml=simplexml_load_file("admins/xml/cafe.xml") or die("Error: Cannot create object");
                         foreach($xml->menu_right as $menu_right){
                             echo '
                                 <div class="box ">
@@ -59,7 +59,7 @@
                                                         <h3>'. $menu_right ->name . '</h3>
                                                     </div>
                                                     <div class="about-name ">
-                                                        <h3>'. $menu_right ->price . '</h3>
+                                                        <h3>$'. $menu_right ->price . '</h3>
                                                     </div>
                                                 </div>
                                                 <p>' . $menu_right ->description . '</p>

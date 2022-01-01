@@ -1,73 +1,87 @@
-<section class="footer" id="footer">
+<section class="footer">
 
     <div class="box-container">
         <div class="box">
             <h3>opening hours</h3>
-            <div class="dates">
-                <p>monday</p>
-                <span class="space"></span>
-                <p>close</p>
-            </div>
-            <div class="dates">
-                <p>tuesday</p>
-                <span class="space"></span>
-                <p>9:00 - 22:00</p>
-            </div>
-            <div class="dates">
-                <p>wednesday</p>
-                <span class="space"></span>
-                <p>9:00 - 22:00</p>
-            </div>
-            <div class="dates">
-                <p>thursday</p>
-                <span class="space"></span>
-                <p>9:00 - 22:00</p>
-            </div>
-            <div class="dates">
-                <p>friday</p>
-                <span class="space"></span>
-                <p>9:00 - 1:00</p>
-            </div>
-            <div class="dates">
-                <p>saturday</p>
-                <span class="space"></span>
-                <p>12:00 - 1:00</p>
-            </div>
-            <div class="dates">
-                <p>sunday</p>
-                <span class="space"></span>
-                <p>9:00 - 22:00</p>
-            </div>
+            <?php
+                $xml_url = 'http://localhost:8888/xml/Coffee/images/';
+                $xml=simplexml_load_file("admins/xml/cafe.xml") or die("Error: Cannot create object");
+                foreach($xml->status as $status){
+                    echo '
+                        <div class="dates">
+                            <p>'.$status->date.'</p>
+                            <span class="space"></span>
+                            <p>'.$status->time.'</p>
+                        </div>
+                    ';     
+                }
+            ?>
         </div>
 
         <div class="box">
-            <h3>latest post</h3>
-            <a href="#">expand</a>
-            <a href="#">USA</a>
-            <a href="#">japan</a>
-            <a href="#">france</a>
+            <h3>Locations</h3>
+            <?php
+                foreach($xml->location as $location){
+                    echo '
+                    <a href="#">'. $location-> local .'</a>
+                    ';     
+                }
+            ?>
         </div>
 
         <div class="box">
-            <h3>quick links</h3>
-            <a href="#home">home</a>
-            <a href="#book">book</a>
-            <a href="#packages">packages</a>
-            <a href="#services">services</a>
-            <a href="#gallery">gallery</a>
-            <a href="#review">review</a>
-            <a href="#contact">contact</a>
+            <h3>Quick links</h3>
+            <?php
+                foreach($xml->header as $header){
+                    echo '
+                    <a href="#'. $header -> name .'">'. $header -> name .'</a>
+                    ';     
+                }
+            ?>
         </div>
 
         <div class="box">
-            <h3>follow us</h3>
-            <a href="#">facebook</a>
-            <a href="#">instagram</a>
-            <a href="#">twitter</a>
-            <a href="#">linkedin</a>
+            <h3>Contact info</h3>
+            <?php
+                foreach($xml->contact as $contact){
+                    echo '
+                    <p><i class="fas fa-phone"></i>  '. $contact->phone .'</p>
+                    <p><i class="fas fa-envelope"></i>  '. $contact->email .' </p>
+                    <p><i class="fas fa-map-marked-alt"></i>  '. $contact-> map .'</p>
+                    ';     
+                }
+            ?>
+            <div class="share">
+                <?php
+                    foreach($xml->youtube as $youtube){
+                        echo '
+                        <a href="'. $youtube-> link .'" class="fab fa-youtube"></a>
+                        ';     
+                    }
+                ?>
+                <?php
+                    foreach($xml->facebook as $facebook){
+                        echo '
+                        <a href="'. $facebook-> link .'" class="fab fa-facebook"></a>
+                        ';     
+                    }
+                ?>
+                <?php
+                    foreach($xml->twitter as $twitter){
+                        echo '
+                        <a href="'. $twitter-> link .'" class="fab fa-twitter"></a>
+                        ';     
+                    }
+                ?>
+                <?php
+                    foreach($xml->instagram as $instagram){
+                        echo '
+                        <a href="'. $instagram-> link .'" class="fab fa-instagram"></a>
+                        ';     
+                    }
+                ?>
+            </div>
         </div>
     </div>
-
-    <h1 class="credit">created by <span>thanh</span> | all rights reserved!</h1>
 
 </section>

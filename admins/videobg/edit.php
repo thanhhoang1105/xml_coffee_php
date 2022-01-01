@@ -1,3 +1,7 @@
+<?php
+    require "../module/auth.php"
+?>
+
 <?php 
      $cafe_shop = simplexml_load_file('../xml/cafe.xml');
     if(isset($_POST['submitSave'])){
@@ -35,20 +39,9 @@
 
     <title>Video Background</title>
 
-    <!-- Bootstrap -->
-    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.0/css/all.min.css"
-        integrity="sha512-gRH0EcIcYBFkQTnbpO8k0WlsD20x5VzjhOA1Og8+ZUAhcMUCvd+APD35FJw3GzHAP3e+mP28YcDJxVr745loHw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-    <!-- Custom Theme Style -->
-    <link href="../build/css/custom.min.css" rel="stylesheet">
-
-    <!-- Style css -->
-    <link href="../build/css/style.css" rel="stylesheet">
+    <?php
+        require "../module/css_module.php"
+    ?>
 
 </head>
 
@@ -66,80 +59,31 @@
                     <div class="clearfix"></div>
 
                     <!-- menu profile quick info -->
-                    <div class="profile clearfix">
-                        <div class="profile_pic">
-                            <img src="../images/ngocngu.jpg" alt="..." class="img-circle profile_img">
-                        </div>
-                        <div class="profile_info">
-                            <span>Chào Mừng</span>
-                            <h2>Ngọc Ngu</h2>
-                        </div>
-                    </div>
+                    <?php
+                        require "../module/menu_profile.php"
+                    ?>
                     <!-- /menu profile quick info -->
 
                     <br />
 
                     <!-- sidebar menu -->
-                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-                        <div class="menu_section">
-                            <h3>Quản lý</h3>
-                            <ul class="nav side-menu">
-                                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="../logo/index.php">Logo</a></li>
-                                        <li><a href="../header/index.php">Header</a></li>
-                                        <li><a href="../videobg/index.php">Video Background Home</a></li>
-                                        <li><a href="../text_bg/index.php">Text In Background</a></li>
-                                    </ul>
-                                </li>
-                                <li><a><i class="fa fa-edit"></i> Section<span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="form.html">Package</a></li>
-                                        <li><a href="form_advanced.html">Services</a></li>
-                                        <li><a href="form_validation.html">Form Validation</a></li>
-                                        <li><a href="form_wizards.html">Form Wizard</a></li>
-                                        <li><a href="form_upload.html">Form Upload</a></li>
-                                        <li><a href="form_buttons.html">Form Buttons</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <?php
+                        require "../module/sidebar_menu.php"
+                    ?>
                     <!-- /sidebar menu -->
 
                     <!-- /menu footer buttons -->
-                    <div class="sidebar-footer hidden-small">
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                        </a>
-                    </div>
+                    <?php
+                        require "../module/logout.php"
+                    ?>
                     <!-- /menu footer buttons -->
                 </div>
             </div>
 
             <!-- top navigation -->
-            <div class="top_nav">
-                <div class="nav_menu">
-                    <div class="nav toggle">
-                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-                    </div>
-                    <nav class="nav navbar-nav">
-                        <ul class=" navbar-right">
-                            <li class="nav-item dropdown open" style="padding-left: 15px;">
-                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
-                                    id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../images/ngocngu.jpg" alt="">Ngọc Ngu
-                                </a>
-                                <div class="dropdown-menu dropdown-usermenu pull-right"
-                                    aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i>
-                                        Log Out</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+            <?php
+                require "../module/top_nav.php"
+            ?>
             <!-- /top navigation -->
 
             <!-- page content -->
@@ -216,21 +160,9 @@
     </div>
 
     <!-- jQuery -->
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-
-    <script src="../vendors/Flot/jquery.flot.js"></script>
-    <script src="../vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="../vendors/Flot/jquery.flot.time.js"></script>
-    <script src="../vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="../vendors/Flot/jquery.flot.resize.js"></script>
-
-    <script src="../vendors/DateJS/build/date.js"></script>
-
-    <!-- Custom Theme Scripts -->
-    <script src="../build/js/custom.min.js"></script>
+    <?php
+        require "../module/js_module.php"
+    ?>
 
 </body>
 

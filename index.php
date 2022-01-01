@@ -13,7 +13,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- custom css file link -->
-    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/style2.css">
 </head>
 
 <body>
@@ -71,13 +71,21 @@
 
     <!-- menu section end -->
 
-    <!-- team section start -->
+    <!-- Product section start -->
 
     <?php
-        require "element/team.php";
+        require "element/product.php";
     ?>
 
-    <!-- team section end -->
+    <!-- Product section end -->
+
+    <!-- Gallery section start -->
+
+    <?php
+        require "element/gallery.php";
+    ?>
+
+    <!-- Gallery section end -->
 
     <!-- brand section starts -->
     <?php
@@ -98,7 +106,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js "></script>
 
     <!-- custom js file link -->
-    <script src="js/scripts.js "></script>
+    <script src="js/scripts1.js "></script>
 </body>
 
 </html>

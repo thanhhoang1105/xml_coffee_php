@@ -26,7 +26,7 @@
     </div>
 
     <div class="video-container">
-        <video src="video/Coffee Jet - 1631.mp4" id="video-slider" loop autoplay muted></video>
+        <video src="video/<?php echo $video_bg -> video ?>" id="video-slider" loop autoplay muted></video>
     </div>
 
 </section>

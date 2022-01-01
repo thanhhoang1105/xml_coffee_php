@@ -1,3 +1,18 @@
+<?php
+session_start();
+//logout
+if(isset($_GET['logout'])){unset($_SESSION['logged_in']);session_destroy();}
+
+
+//check login
+if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true){
+    //json decode user details from session into an array
+    $user_details = json_decode($_SESSION['user_details'],true);
+}else{
+    exit(header("Location: ./login.php"));
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,9 +87,26 @@
                                         <li><a href="package">Package</a></li>
                                         <li><a href="service">Service</a></li>
                                         <li><a href="wrapper">Wrapper</a></li>
-                                        <li><a href="form_wizards.html">Form Wizard</a></li>
-                                        <li><a href="form_upload.html">Form Upload</a></li>
-                                        <li><a href="form_buttons.html">Form Buttons</a></li>
+                                        <li><a href="menu_left">Menu Left</a></li>
+                                        <li><a href="menu_right">Menu Right</a></li>
+                                        <li><a href="product">Product</a></li>
+                                        <li><a href="gallery">Gallery</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-cogs"></i> Footer<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="status">Status</a></li>
+                                        <li><a href="location">Location</a></li>
+                                        <li><a href="contact">Contact</a></li>
+                                        <li><a href="youtube">Youtube</a></li>
+                                        <li><a href="facebook">Facebook</a></li>
+                                        <li><a href="twitter">Twitter</a></li>
+                                        <li><a href="instagram">Instagram</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-user"></i> Account<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="user">User</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -84,9 +116,7 @@
 
                     <!-- /menu footer buttons -->
                     <div class="sidebar-footer hidden-small">
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                        </a>
+                        <?php echo '<a data-toggle="tooltip" data-placement="top" title="Logout" href="?logout"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>';?>
                     </div>
                     <!-- /menu footer buttons -->
                 </div>
@@ -107,8 +137,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i>
-                                        Log Out</a>
+                                    <?php echo '<a class="dropdown-item" href="?logout"><i class="fa fa-sign-out pull-right"></i>Log Out</a>';?>
                                 </div>
                             </li>
                         </ul>

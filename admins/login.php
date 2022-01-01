@@ -1,3 +1,11 @@
+<?php session_start();
+//already logged in
+if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true){
+    exit(header("Location: ./admin_panel.php"));
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,16 +39,18 @@
         <div class="login_wrapper">
             <div class="animate form login_form">
                 <section class="login_content">
-                    <form>
+                    <?php echo (isset($_SESSION['error'])?'<span style="color:red">'.$_SESSION['error'].'</span>':null);?>
+                    <form action="admin_verify.php" method="post">
                         <h1>Login Form</h1>
                         <div>
-                            <input type="text" class="form-control" placeholder="Username" required="" />
+                            <input type="text" class="form-control" placeholder="username" name="admin_name" />
                         </div>
                         <div>
-                            <input type="password" class="form-control" placeholder="Password" required="" />
+                            <input type="password" class="form-control" placeholder="password" name="admin_password" />
                         </div>
                         <div>
-                            <a class="btn btn-default submit" href="index.html">Log in</a>
+                            <input style="margin-left:30px" type="submit" value="Login" />
+                            <!-- <input class="btn btn-default submit" type="submit" value="Login"></input> -->
                             <a class="reset_pass" href="#">Lost your password?</a>
                         </div>
 
@@ -80,15 +90,6 @@
                             <p class="change_link">Already a member ?
                                 <a href="#signin" class="to_register"> Log in </a>
                             </p>
-
-                            <div class="clearfix"></div>
-                            <br />
-
-                            <div>
-                                <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and
-                                    Terms</p>
-                            </div>
                         </div>
                     </form>
                 </section>
@@ -98,3 +99,8 @@
 </body>
 
 </html>
+
+<?php 
+//unset error as its only required once
+unset($_SESSION['error']);
+?>

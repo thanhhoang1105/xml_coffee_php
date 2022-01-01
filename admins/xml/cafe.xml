@@ -1,70 +1,231 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- <?xml-stylesheet type = "text/xsl" href = "cafe.xsl" ?> -->
 <cafe_shop>
-    <logo id="1">
-        <text_one>L</text_one>
-        <text_two>ogo</text_two>
-        <image/>
-    </logo>
-    <header id="1">
-        <name>home</name>
-    </header>
-    <header id="2">
-        <name>Menu</name>
-    </header>
-    <header id="3">
-        <name>Page</name>
-    </header>
-    
-    <header id="4">
-        <name>blog</name>
-    </header>
-    <header id="5">
-        <name>shop</name>
-    </header>
-    <header id="6">
-        <name>element</name>
-    </header>
-    
-    
-    
-    <text_bg id="1">
-        <image>logo-banner.png</image>
-        <title>SPECIAL COFFEE BEANS</title>
-        <text>Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry.</text>
-        <button>read more</button>
-    </text_bg>
-    <video_bg id="1">
-        <video>Coffee - 80134.mp4</video>
-        <class_active>active</class_active>
-    </video_bg>
-    <video_bg id="2">
-        <video>Coffee Jet - 1631.mp4</video>
-        <class_active/>
-    </video_bg>
-    <video_bg id="3">
-        <video>Sequence-01_1.mp4</video>
-        <class_active/>
-    </video_bg>
-    
-    <service id="1">
-        <image>02-1.png</image>
-        <name>COFFEEMAKER</name>
-        <description>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Inventore Commodi Earum, Quis Voluptate Exercitationem Ut Minima Itaque Ipsum Corrupti!</description>
-    </service>
-    <service id="2">
-        <image>02-2.png</image>
-        <name>COFFEE GRINDER</name>
-        <description>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Inventore Commodi Earum, Quis Voluptate Exercitationem Ut Minima Itaque Ipsum Corrupti!</description>
-    </service>
-    <service id="3">
-        <image>02-3.png</image>
-        <name>COFFEE CUPS</name>
-        <description>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Inventore Commodi Earum, Quis Voluptate Exercitationem Ut Minima Itaque Ipsum Corrupti!</description>
-    </service>
-    <service id="4">
-        <image>02-4.png</image>
-        <name>ESPRESSO MACHINE</name>
-        <description>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Inventore Commodi Earum, Quis Voluptate Exercitationem Ut Minima Itaque Ipsum Corrupti!</description>
-    </service>
-<packages id="2"><image>01-2.jpg</image><numeric>02</numeric><name>FEEL THE COFFEE</name><description>Alienum phaedrum to rquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an pericula euripidis, hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix atle.</description><button>read more</button></packages><packages id="3"><image>01-3.jpg</image><numeric>03</numeric><name>FULL TASTE</name><description>Alienum phaedrum to rquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an pericula euripidis, hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix atle.</description><button>read more</button></packages><wrapper id="1"><image_left>03-1.jpg</image_left><image_right>03-2.jpg</image_right><title>try the best coffee in the city</title><text>lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur</text><button>read more</button></wrapper></cafe_shop>
+   <logo id="1">
+      <text_one>l</text_one>
+      <text_two>ogo</text_two>
+      <image/>
+   </logo>
+   <header id="1">
+      <name>home</name>
+   </header>
+   <header id="2">
+      <name>menu</name>
+   </header>
+   <header id="3">
+      <name>page</name>
+   </header>
+   <header id="4">
+      <name>blog</name>
+   </header>
+   <header id="5">
+      <name>shop</name>
+   </header>
+   <header id="6">
+      <name>element</name>
+   </header>
+   <video_bg id="1">
+      <video>Coffee Jet - 1631.mp4</video>
+      <class_active>active</class_active>
+   </video_bg>
+   <video_bg id="2">
+      <video>Sequence-01_1.mp4</video>
+      <class_active/>
+   </video_bg>
+   <video_bg id="3">
+      <video>Coffee - 80134.mp4</video>
+      <class_active/>
+   </video_bg>
+   <text_bg id="1">
+      <image>logo-banner.png</image>
+      <title>special coffee beans</title>
+      <text>lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur</text>
+      <button>read more</button>
+   </text_bg>
+   <packages id="1">
+      <image>01-1.jpg</image>
+      <numeric>01</numeric>
+      <name>beautiful place</name>
+      <description>Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley Of Type And Scrambled It To Make A Type Specimen Book.  Read More</description>
+      <button>read more</button>
+   </packages>
+   <packages id="2">
+      <image>01-2.jpg</image>
+      <numeric>02</numeric>
+      <name>feel the coffee</name>
+      <description>Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley Of Type And Scrambled It To Make A Type Specimen Book.</description>
+      <button>read more</button>
+   </packages>
+   <packages id="3">
+      <image>01-3.jpg</image>
+      <numeric>03</numeric>
+      <name>full taste</name>
+      <description>Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley Of Type And Scrambled It To Make A Type Specimen Book.</description>
+      <button>read more</button>
+   </packages>
+   <service id="1">
+      <image>02-1.png</image>
+      <name>COFFEEMAKER</name>
+      <description>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Inventore Commodi Earum, Quis Voluptate Exercitationem Ut Minima Itaque Ipsum Corrupti!</description>
+   </service>
+   <service id="2">
+      <image>02-2.png</image>
+      <name>COFFEE GRINDER</name>
+      <description>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Inventore Commodi Earum, Quis Voluptate Exercitationem Ut Minima Itaque Ipsum Corrupti!</description>
+   </service>
+   <service id="3">
+      <image>02-3.png</image>
+      <name>COFFEE CUPS</name>
+      <description>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Inventore Commodi Earum, Quis Voluptate Exercitationem Ut Minima Itaque Ipsum Corrupti!</description>
+   </service>
+   <service id="4">
+      <image>02-4.png</image>
+      <name>ESPRESSO MACHINE</name>
+      <description>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Inventore Commodi Earum, Quis Voluptate Exercitationem Ut Minima Itaque Ipsum Corrupti!</description>
+   </service>
+   <wrapper id="1">
+      <image_left>03-1.jpg</image_left>
+      <image_right>03-2.jpg</image_right>
+      <title>try the best coffee in the city</title>
+      <text>lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, tenetur</text>
+      <button>read more</button>
+   </wrapper>
+   <menu_left id="1">
+      <image>05-1.jpg</image>
+      <name>CAFFE LATTE</name>
+      <description>Fresh Brewed Coffee And Steamed Milk</description>
+      <price>2.95</price>
+   </menu_left>
+   <menu_right id="1">
+      <image>05-2.jpg</image>
+      <name>CAFFE LATTE</name>
+      <description>Fresh Brewed Coffee And Steamed Milk</description>
+      <price>2.95</price>
+   </menu_right>
+   <product id="1">
+      <image>cf-arabica.jpg</image>
+      <name>Cà phê arabica</name>
+      <description>Cà Phê Chè(Arabica) là loại cà phê có hạt dài, trồng ở độ cao trên 600m. Ở nước ta thì Arabica chỉ được trồng ở Lâm Đồng. Quả Arabica sau khi được thu hoạch sẽ đem đi lên men, rửa sạch và sấy. Arabica có hương vị hơi chua từ đầu nhưng bạn sẽ cảm nhận được vị đắng của nó ngay lập tức, có thể mua các thương hiệu kinh doanh cà phê nổi tiếng như Hương Việt, Mê Trang</description>
+   </product>
+   <product id="2">
+      <image>cf-robusta.jpg</image>
+      <name>cà phê Robusta</name>
+      <description>Nằm trong top các loại cà phê nổi tiếng ở Việt Nam đó là Cà phê Vối Robusta có hạt khá nhỏ, được nhiều người biết đến với tên cà phê vối. Là loại cà phê thích hợp trồng ở độ cao dưới 600m, được trồng chủ yếu ở nước ta chiếm đến 90%. Robusta được sấy trực tiếp chứ không lên men nên cà phê có vị đắng, uống cực kỳ đậm đà, phù hợp cho nam giới.</description>
+   </product>
+   <product id="3">
+      <image>cf-culi.jpg</image>
+      <name>Ca phê Culi</name>
+      <description>Được trồng ở độ cao dưới 600m, khí hậu nhiệt đới, vì thế có mặt ở nhiều nước hơn (Ở Việt Nam loại này chiếm hơn 90%). Việt Nam có tổng lượng chiếm 1/3 lượng cà phê tiêu thụ trên toàn thế giới. Đây là loại cà phê có duy nhất một hạt, vị đắng gắt, mùi thơm say đắm lòng người, chứa hàm lượng cafein cao, có màu đen sánh.t</description>
+   </product>
+   <product id="4">
+      <image>cf-cherry.jpg</image>
+      <name>cà phê Cherry</name>
+      <description>Cà phê Cherry còn được gọi với cái tên thuần Việt là cà phê mít gồm có 2 giống chính là Excelsa và Liberica. Cà phê Cherry không được trồng phổ biến ở nước ta nhưng có khả năng chống chịu sâu bệnh rất tốt và đem lại năng suất cao cho người trồng. Vốn được trồng ở vùng đất đầy nắng và gió của Cao Nguyên, hạt cà phê có màu vàng, sáng bóng rất đẹp mắt.</description>
+   </product>
+   <product id="5">
+      <image>cf-moka.jpg</image>
+      <name>cà phê Moka</name>
+      <description>Cà phê Moka thuộc chi Arabica, được trồng tại Lâm Đồng. Đây là loại cà phê khó trồng nhất bởi chúng dễ bị sâu bệnh đòi hỏi người trồng phải có quy trình chăm sóc tỉ mỉ. Vì vậy cà phê Moka được xem là cà phê quý hiếm, có giá thành cao hơn so với các loại cà phê khác. Moka có hương thơm rất đặc biệt, sang trọng và có vị chua thanh thoát, thích hợp cho người sành điệu.</description>
+   </product>
+   <gallery id="1">
+      <image>g-img-1.jpg</image>
+      <name>morning coffee</name>
+      <description>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, dolore?</description>
+      <button/>
+   </gallery>
+   <gallery id="2">
+      <image>g-img-2.jpg</image>
+      <name>morning coffee</name>
+      <description>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, dolore?</description>
+      <button/>
+   </gallery>
+   <gallery id="3">
+      <image>g-img-3.jpg</image>
+      <name>morning coffee</name>
+      <description>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, dolore?</description>
+      <button/>
+   </gallery>
+   <gallery id="4">
+      <image>g-img-4.jpg</image>
+      <name>morning coffee</name>
+      <description>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, dolore?</description>
+      <button/>
+   </gallery>
+   <gallery id="5">
+      <image>g-img-5.jpg</image>
+      <name>morning coffee</name>
+      <description>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, dolore?</description>
+      <button/>
+   </gallery>
+   <gallery id="6">
+      <image>g-img-6.jpg</image>
+      <name>morning coffee</name>
+      <description>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, dolore?</description>
+      <button/>
+   </gallery>
+   <status id="1">
+      <date>monday</date>
+      <time>close</time>
+   </status>
+   <status id="2">
+      <date>tuesday</date>
+      <time>9:00 - 22:00</time>
+   </status>
+   <status id="3">
+      <date>wednesday</date>
+      <time>9:00 - 22:00</time>
+   </status>
+   <status id="4">
+      <date>thursday</date>
+      <time>9:00 - 22:00</time>
+   </status>
+   <status id="5">
+      <date>friday</date>
+      <time>9:00 - 1:00</time>
+   </status>
+   <status id="6">
+      <date>saturday</date>
+      <time>12:00 - 1:00</time>
+   </status>
+   <status id="7">
+      <date>sunday</date>
+      <time>9:00 - 22:00</time>
+   </status>
+   <location id="1">
+      <local>india</local>
+   </location>
+   <location id="2">
+      <local>USA</local>
+   </location>
+   <location id="3">
+      <local>russia</local>
+   </location>
+   <location id="4">
+      <local>japan</local>
+   </location>
+   <location id="5">
+      <local>france</local>
+   </location>
+   <location id="6">
+      <local>africa</local>
+   </location>
+   <location id="7">
+      <local>spain</local>
+   </location>
+   <contact id="1">
+      <phone>+84 847 353 454</phone>
+      <email>thanhhoangngoc.bmt@gmail.com</email>
+      <map>VietNam, Bu�n Ma Thuột</map>
+   </contact>
+   <youtube id="1">
+      <link>https://www.youtube.com/channel/UC5xQeUQXf2mmWEcStZ_qH-A</link>
+   </youtube>
+   <facebook id="1">
+      <link>https://www.facebook.com/thanh.hoangngoc.790</link>
+   </facebook>
+   <twitter id="1">
+      <link>https://twitter.com/Thanhhoang1105</link>
+   </twitter>
+   <instagram id="1">
+      <link>https://www.instagram.com/hoangngoc2326/</link>
+   </instagram>
+</cafe_shop>
