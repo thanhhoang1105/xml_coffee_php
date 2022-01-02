@@ -44,9 +44,12 @@
             <h3>Contact info</h3>
             <?php
                 foreach($xml->contact as $contact){
+                    $url_mail='https://mail.google.com/mail/u/0/#search/';
                     echo '
                     <p><i class="fas fa-phone"></i>  '. $contact->phone .'</p>
-                    <p><i class="fas fa-envelope"></i>  '. $contact->email .' </p>
+                    <div class = "content">
+                        <a href="'.$url_mail.''. $contact-> email .'" class="about-email"><i class="fas fa-envelope"></i>  '. $contact->email .'</a>
+                    </div>
                     <p><i class="fas fa-map-marked-alt"></i>  '. $contact-> map .'</p>
                     ';     
                 }

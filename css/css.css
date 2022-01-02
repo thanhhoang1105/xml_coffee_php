@@ -734,6 +734,15 @@ header .search-bar-container label:hover {
     font-size: 1.5rem;
     padding: 0.7rem 0;
     color: #eee;
+    text-transform: none;
+}
+
+.footer .box-container .box .content a {
+    text-decoration: none;
+}
+
+.footer .box-container .box .content a:hover {
+    color: #FF4F5B;
 }
 
 .footer .box-container .box a:hover {
