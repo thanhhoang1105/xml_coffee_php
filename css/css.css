@@ -547,8 +547,8 @@ header .search-bar-container label:hover {
 }
 
 .menu .box-container .box ul li .about-img {
-    width: 83px;
-    height: 83px;
+    width: 15%;
+    height: 15%;
 }
 
 .menu .box-container .box ul li .about-img img {
@@ -561,6 +561,7 @@ header .search-bar-container label:hover {
 
 .menu .box-container .box ul li .content {
     padding: 5px 0px 5px 20px;
+    width: 80%;
 }
 
 .menu .container .box-container .box ul li .content .name-coffee h3 {
@@ -573,7 +574,14 @@ header .search-bar-container label:hover {
 
 .menu .container .box-container .box ul li .content .name-coffee {
     display: flex;
-    gap: 250px;
+}
+
+.menu .container .box-container .box ul li .content .name-coffee .about-name {
+    width: 100%;
+}
+
+.menu .container .box-container .box ul li .content .name-coffee .end {
+    text-align: end;
 }
 
 .menu .box-container .box ul li .content p {

@@ -8,13 +8,13 @@
 
         <?php
             $xml_url = 'http://localhost:8888/xml/Coffee/images/';
-            $xml=simplexml_load_file("admins/xml/xml.xml") or die("Error: Cannot create object");
-            foreach($xml->services as $services){
+            $xml=simplexml_load_file("admins/xml/cafe.xml") or die("Error: Cannot create object");
+            foreach($xml->service as $service){
                 echo '
                 <div class = "box">
-                <img src="'.$xml_url . '' . $services -> image . '">
-                <h3>'. $services ->name . '</h3>
-                <p>' . $services ->description . '</p>
+                <img src="'.$xml_url . '' . $service -> image . '">
+                <h3>'. $service ->name . '</h3>
+                <p>' . $service ->description . '</p>
                 </div>
                 ';     
             }

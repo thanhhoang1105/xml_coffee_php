@@ -28,7 +28,7 @@
                                                     <div class="about-name ">
                                                         <h3>'. $menu_left ->name . '</h3>
                                                     </div>
-                                                    <div class="about-name ">
+                                                    <div class="about-name end">
                                                         <h3>$'. $menu_left ->price . '</h3>
                                                     </div>
                                                 </div>
